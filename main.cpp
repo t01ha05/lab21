@@ -75,6 +75,24 @@ void print() const {
         cout << "List is empty" <<endl;
         return;
     }
-    Node*
+    Node* current = head;
+    while (current) {
+        current->data.display();
+        cout << endl;
+        current = current->next;
+    }
+}
+
+void print_reverse() const{
+    if(!tail) {
+        cout << "List is empty" << endl;
+        return;
+    }
+    Node* current = tail;
+    while (current) {
+        current->data.display();
+        cout << endl;
+        current = current->prev;
+    }
 }
 
