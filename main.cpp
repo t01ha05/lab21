@@ -1,4 +1,14 @@
-#include <iostream>
+/*
+ * Title: Doubly Linked List of Goats
+ * Description: This program creates a doubly linked list where each node stores a Goat object. 
+ *              It demonstrates how to insert nodes at both the front and back, print the list 
+ *              in both forward and reverse order, and handle random Goat object generation.
+ * Author: Talha Ahmed
+ * Lab: 21
+ * Class: COMSC-210 Program Design and Data Structures
+ */
+ 
+ #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <string>
