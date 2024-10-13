@@ -29,4 +29,52 @@ class Goat {
     }
 };
 
+const string Goat::names[15] = { "Billy", "Nanny", "Gruff", "Jolly", "Skip", "Buck", "Patches", "Snowy", "Thunder", "Daisy", "Clover", "Chloe", "Ginger", "Rocky", "Sunny" };
+const string Goat::colors[15] = { "White", "Black", "Brown", "Gray", "Yellow", "Red", "Blue", "Green", "Gold", "Silver", "Purple", "Pink", "Orange", "Mauve", "Tan" };
+
+class DoublyLinkedList {
+private:
+    struct Node {
+         Goat data;
+        Node* prev;
+        Node* next;
+        Node(Goat val, Node* p = nullptr, Node* n = nullptr ) : data (val),prev(p), next(n) {}
+    };
+    Node* head;
+    Node* tail;
+
+public:
+
+DoubleLinkedList () : head(nullptr), tail(nullptr){}
+
+void push_back(const Goat& goat) {
+    Node* newNode = new Node(goat);
+    if(!tail) {
+        head = tail = newNode;
+
+    } else {
+        tail->next = newNode;
+        newNode->prev=tail;
+        tail = newNode;
+    }
+}
+
+void push_front(const Goat& goat) {
+    Node* newNode = new Node (goat);
+    if(!head) {
+        head = tail = newNode;
+    } else {
+        newNode->next=head;
+        head->prev = newNode;
+        head = newNode;
+    }
+}
+
+void print() const {
+    if(!head) {
+        cout << "List is empty" <<endl;
+        return;
+    }
+    Node*
+}
 
