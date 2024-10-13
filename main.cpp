@@ -17,7 +17,7 @@ class Goat {
     public:
 
     Goat(){
-        age = rand() % (MAX_NR - MIN__NR +1) + MIN_NR;
+        age = rand() % (MAX_NR - MIN_NR +1) + MIN_NR;
         name = names[rand()% 15];
         color = colors[rand() % 15];
     }
@@ -45,7 +45,7 @@ private:
 
 public:
 
-DoubleLinkedList () : head(nullptr), tail(nullptr){}
+DoubleLinkedList() : head(nullptr), tail(nullptr) {}
 
 void push_back(const Goat& goat) {
     Node* newNode = new Node(goat);
@@ -95,4 +95,34 @@ void print_reverse() const{
         current = current->prev;
     }
 }
+
+ ~DoublyLinkedList() {
+        while (head) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+};
+
+int main(){
+    srand(time(0));
+
+    DoublyLinkedList list;
+    int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
+
+    for (int i = 0; i < size; ++i) {
+        list.push_back(Goat());
+    }
+    
+    cout << "List forward: " << endl;
+    list.print();
+
+    cout << "List backward: " << endl;
+    list.print_reverse();
+
+    return 0;
+}
+
+    
 
